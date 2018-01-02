@@ -7,6 +7,12 @@ boolean record = false;
 // large seed numbers so that there's plenty to pick from
 float seedMax = 1000000;
 int seed = int(ceil(random(0,seedMax)));
+// grid settings
+int lineSize = 5;
+int gridSpacing = 100;
+int dotSize = lineSize * 1;
+boolean wild = false;
+boolean gradiant = true;
 
 // initialize setup
 void setup() {
@@ -18,7 +24,7 @@ void setup() {
 void draw() {
   // start saving
   if (record) {
-    beginRecord(PDF, "saves/Reach-" + seed + ".pdf");
+    beginRecord(PDF, "saves/Reach_" + seed + ".pdf");
   }
   // create the grid
   generate();
@@ -35,7 +41,7 @@ void generate() {
   // set it all on a white backgroud -- can strip this out later if need be
   background(255);
   // make a new grid object
-  gridLayout = new Grid(50, 4, 1, true);
+  gridLayout = new Grid(gridSpacing, dotSize, lineSize, wild, gradiant);
 }
 
 void keyPressed(){
