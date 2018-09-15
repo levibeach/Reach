@@ -2,6 +2,8 @@
 
 > Points on a grid reaching out in different directions or keeping to themselves.
 
+![Preview](./preview.gif)
+
 ## Requirements
 
 Reach is written in Processing and can be ran with the [Processing app](https://processing.org/download/).
